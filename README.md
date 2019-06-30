@@ -14,6 +14,14 @@ spreadsheet for persistence and a HTTP API for access. It looks like this:
 
 [![Message Queue Demo](message-queue.png)](https://youtu.be/KVzdOF-Nf2s)
 
+Limitations
+-----------
+
+Race conditions are likely to occur when concurrently *consuming* messages.
+There does not seem to be a way to lock the spreadsheet. For the producer,
+the `sheet.appendRow()` method looks like an atomic operation, although
+the documentation does not mention anything specific about it.
+
 How to Install
 --------------
 
