@@ -75,7 +75,6 @@ function doGet(request) {
   
   if(request.parameter["action"] == "deQueue") {
     var blocking = (request.parameter["blocking"] == "true");
-    Logger.log(blocking);
     var message = deQueue(blocking);
 
     if(message != null) {  
